@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import cybersoft.java11.crm.biz.HomeBiz;
 
 @WebServlet(name = "homeServlet", urlPatterns = {
-		"/health"
-})
+		"/health","/role"})
 public class HomeServlet extends HttpServlet {
 	private HomeBiz biz;
 	
@@ -26,10 +25,23 @@ public class HomeServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO: check database health
-		boolean databaseCheckResult = biz.checkHealth();
-		if(databaseCheckResult)
-			resp.getWriter().append("Connection to database has been made successfully.");
-		else
-			resp.getWriter().append("Connection to database has been made unsuccessfully.");
+			String action=req.getServletPath();
+			switch(action)
+			{
+			case "/health":
+			{
+				boolean databaseCheckResult = biz.checkHealth();
+				if(databaseCheckResult)
+					resp.getWriter().append("Connection to database has been made successfully.");
+				else
+					resp.getWriter().append("Connection to database has been made unsuccessfully.");
+				break;
+			}
+			case "/role":
+			{
+				
+				break;
+			}
+			}
 	}
 }

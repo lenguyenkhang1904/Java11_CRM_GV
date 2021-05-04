@@ -30,6 +30,70 @@ public class User {
 		this.phone = "";
 		this.role = null;
 	}
-	
 	/* getters/setters */
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getFullname() {
+		return fullname;
+	}
+
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(int roleid) {
+		this.role.setId(roleid);
+	}
+	//toString
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", password=" + password + ", fullname=" + fullname
+				+ ", address=" + address + ", phone=" + phone + ", role=" + role.getId() + "]";
+	}
+
+
+	
 }

@@ -12,6 +12,7 @@ import cybersoft.java11.crm.model.Role;
 
 public class RoleDao {
 	
+	
 	public List<Role> findAll(){
 		/* return all roles in database */
 		List<Role> listRole = new LinkedList<Role>();
